@@ -23,19 +23,14 @@
   }
 }
 
-@keyframes heartbeatOpacity {
-  0% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.65; transform: scale(0.985); }
-  100% { opacity: 1; transform: scale(1); }
-}
-
-.animate-heartbeat {
-  animation: heartbeatOpacity 4s ease-in-out infinite;
-}
+/* Removed heartbeat animation */
 
 /* Smooth scrollbar hidden look for galleries */
 .gallery-scroll::-webkit-scrollbar { display: none; }
 .gallery-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Subtle gradient under navbar for seamless blend */
+.nav-gradient { box-shadow: inset 0 -16px 16px -16px rgba(0,0,0,0.6); }
 
 /* Custom utility classes for shadcn/ui patterns */
 @layer utilities {

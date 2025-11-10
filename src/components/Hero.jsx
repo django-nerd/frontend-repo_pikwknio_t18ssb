@@ -12,7 +12,7 @@ const Hero = () => {
           <img
             src="https://the-eye.eu/static/eye-logo.png"
             alt="The Eye Logo"
-            className="mx-auto h-40 w-40 object-contain opacity-100 animate-heartbeat"
+            className="mx-auto h-40 w-40 object-contain opacity-100"
           />
         </div>
       </div>

@@ -6,8 +6,9 @@ const Navbar = () => {
   const isHome = location.pathname === '/';
 
   return (
-    <nav className="h-16 w-full fixed top-0 left-0 right-0 z-20 bg-black/80 backdrop-blur-sm border-b border-white/10">
-      <div className="max-w-7xl mx-auto h-full px-4 flex items-center justify-between">
+    <nav className="h-16 w-full fixed top-0 left-0 right-0 z-20 bg-black/60 backdrop-blur-md">
+      <div className="relative max-w-7xl mx-auto h-full px-4 flex items-center justify-between">
+        {/* Left: Home logo only on non-home routes */}
         <div className="flex items-center gap-3">
           {!isHome && (
             <Link to="/" className="flex items-center gap-2 group">
@@ -19,19 +20,26 @@ const Navbar = () => {
             </Link>
           )}
         </div>
-        <div className="flex items-center gap-6 text-sm">
+
+        {/* Centered links */}
+        <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-8 text-sm font-semibold">
           <Link to="/live" className="flex items-center gap-2 text-white/90 hover:text-white transition">
+            <span>live</span>
             <span className="relative inline-flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
             </span>
-            <span>live</span>
           </Link>
           <Link to="/legacy" className="text-white/90 hover:text-white transition">
             legacy
           </Link>
         </div>
+
+        {/* Right spacer to balance flex layout */}
+        <div className="w-8" />
       </div>
+      {/* Subtle bottom gradient to blend into page content */}
+      <div className="pointer-events-none absolute inset-x-0 -bottom-8 h-8 bg-gradient-to-b from-black/60 to-transparent" />
     </nav>
   );
 };
