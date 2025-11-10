@@ -15,12 +15,27 @@
   html {
     font-family: var(--font-sans);
     font-feature-settings: "rlig" 1, "calt" 1;
+    background: #000;
   }
 
   body {
-    @apply antialiased;
+    @apply antialiased bg-black text-white;
   }
 }
+
+@keyframes heartbeatOpacity {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.65; transform: scale(0.985); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.animate-heartbeat {
+  animation: heartbeatOpacity 4s ease-in-out infinite;
+}
+
+/* Smooth scrollbar hidden look for galleries */
+.gallery-scroll::-webkit-scrollbar { display: none; }
+.gallery-scroll { -ms-overflow-style: none; scrollbar-width: none; }
 
 /* Custom utility classes for shadcn/ui patterns */
 @layer utilities {
